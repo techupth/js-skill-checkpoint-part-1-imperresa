@@ -17,10 +17,13 @@ const products = [
   },
 ];
 
-const promotionCode = "";
-function calculateTotalPrice(callback,promotionCode,products){
-  let total = callback(products)
+const promotionCode = "SALE50";
+function calculateTotalPrice(products,promotionCode){
+  let total = 0
+ for(let i of products){
+  total += i.price*i.quantity
   console.log(total);
+ } 
   if(promotionCode === "SALE20"){
     return total*0.8
   }if (promotionCode === "SALE50") {
@@ -29,14 +32,5 @@ function calculateTotalPrice(callback,promotionCode,products){
     return total
   }
 }
-function check(all){
-  let total =0
-  for (let i of all){
-    total += i.price*i.quantity
-  }
-  return total
-  }
 
-
-
-console.log(calculateTotalPrice(check,promotionCode,products));
+console.log(calculateTotalPrice(products,promotionCode));
