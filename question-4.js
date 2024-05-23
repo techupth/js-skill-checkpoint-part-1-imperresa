@@ -14,6 +14,6 @@ const inventory = [
 
 let minTotal = inventory.reduce((arr,curr)=>{
   console.log(arr);
-  return curr.quantity < arr? curr.quantity:arr
-},Infinity)
-console.log('สินค้าที่มีจำนวนต่ำที่สุดในคลังสินค้าคือ Banana ซึ่งมี'+' '+minTotal+' '+ 'ชิ้น');
+  return curr.quantity < arr.quantity? curr:arr
+},)
+console.log('สินค้าที่มีจำนวนต่ำที่สุดในคลังสินค้าคือ '+minTotal.name+' ซึ่งมี'+' '+minTotal.quantity+' '+ 'ชิ้น');
